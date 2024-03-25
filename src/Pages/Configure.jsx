@@ -16,7 +16,6 @@ import {
   CheckOutlined,
 } from "@ant-design/icons";
 const App = () => {
-  const [tabPosition, setTabPosition] = useState("left");
   const [uploadImage, setUploladImage] = useState(null);
   const [aiFile, setAiFile] = useState(null);
 
@@ -162,7 +161,7 @@ const App = () => {
   // submit failed  function
 
   const onFinishFailed = (errorInfo) => {
-    console.log("Failed:", errorInfo, setTabPosition);
+    console.log("Failed:", errorInfo);
   };
 
   const tabData = [
@@ -903,7 +902,7 @@ const App = () => {
       <div className="container">
         <Tabs
           defaultActiveKey="1"
-          tabPosition={tabPosition}
+          tabPosition="left"
           items={tabData.map((data) => {
             return {
               key: data.id,
