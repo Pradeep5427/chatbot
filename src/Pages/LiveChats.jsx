@@ -7,7 +7,6 @@ import {
   Button,
   Space,
   Form,
-  message,
   TimePicker,
   DatePicker,
   Dropdown,
@@ -113,7 +112,7 @@ export default function LiveChats() {
     axios.get(`${baseUrl}welcomemsg/${botId}`).then((res) => {
       setConfigureMsg(res);
     });
-  }, []);
+  }, [messages]);
 
   const handleResetForm = () => {
     form.resetFields();
