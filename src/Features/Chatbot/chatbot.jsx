@@ -22,7 +22,7 @@ export const chatbot = createSlice({
       console.log("reducerID..", id);
       const existingBot = state.find((user) => user.id === id);
       if (existingBot) {
-        return state.filter((bot) => bot.id != id);
+        return state.filter((bot) => bot.id !== id);
       }
     },
   },

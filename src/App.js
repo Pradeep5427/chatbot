@@ -1,7 +1,6 @@
 import "./App.css";
 import "./Assets/Styles/common.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import PrivateRoutes from "./Routes/PrivateRoute";
 import Login from "./Components/Login";
 import SignUp from "./Components/SignUp";
 import Dashboard from "./Pages/Dashboard";

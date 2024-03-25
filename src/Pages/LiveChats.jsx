@@ -12,12 +12,7 @@ import {
   DatePicker,
   Dropdown,
 } from "antd";
-import {
-  SendOutlined,
-  DownOutlined,
-  FieldTimeOutlined,
-  CalendarOutlined,
-} from "@ant-design/icons";
+import { SendOutlined, DownOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import BotImage from "../Assets/Images/userimage.jpeg";
 import axios from "axios";
@@ -85,6 +80,7 @@ export default function LiveChats() {
     const formData = new FormData();
     formData.append("questions", time);
     const response = await axios.post(`${baseUrl}store_time`, formData);
+    console.log("response.....", response);
   };
 
   const getDate = async () => {
@@ -185,14 +181,14 @@ export default function LiveChats() {
               {messages.map((message, index) => (
                 <div className="botmsg" key={index}>
                   <div>
-                    {message["bot"] && message["bot"].type == "message" ? (
+                    {message["bot"] && message["bot"].type === "message" ? (
                       <Space>
                         <Avatar src={botImage} />
                         <p className="bot-L">{message["bot"].value}</p>
                       </Space>
-                    ) : message["bot"] && message["bot"].type == "time" ? (
+                    ) : message["bot"] && message["bot"].type === "time" ? (
                       message["bot"] &&
-                      message["bot"].type == "time" && (
+                      message["bot"].type === "time" && (
                         <Space>
                           <Avatar src={botImage} />
                           <Form
@@ -253,9 +249,9 @@ export default function LiveChats() {
                           ></div> */}
                         </Space>
                       )
-                    ) : message["bot"] && message["bot"].type == "date" ? (
+                    ) : message["bot"] && message["bot"].type === "date" ? (
                       message["bot"] &&
-                      message["bot"].type == "date" && (
+                      message["bot"].type === "date" && (
                         <Space>
                           <Avatar src={botImage} />
                           <Form
@@ -315,9 +311,9 @@ export default function LiveChats() {
                           ></div> */}
                         </Space>
                       )
-                    ) : message["bot"] && message["bot"].type == "image" ? (
+                    ) : message["bot"] && message["bot"].type === "image" ? (
                       message["bot"] &&
-                      message["bot"].type == "image" && (
+                      message["bot"].type === "image" && (
                         <Space>
                           <Avatar src={botImage} />
                           <div
@@ -327,9 +323,9 @@ export default function LiveChats() {
                           ></div>
                         </Space>
                       )
-                    ) : message["bot"] && message["bot"].type == "email" ? (
+                    ) : message["bot"] && message["bot"].type === "email" ? (
                       message["bot"] &&
-                      message["bot"].type == "email" && (
+                      message["bot"].type === "email" && (
                         <Space>
                           <Avatar src={botImage} />
                           <Form
@@ -385,9 +381,9 @@ export default function LiveChats() {
                           ></div> */}
                         </Space>
                       )
-                    ) : message["bot"] && message["bot"].type == "phone" ? (
+                    ) : message["bot"] && message["bot"].type === "phone" ? (
                       message["bot"] &&
-                      message["bot"].type == "phone" && (
+                      message["bot"].type === "phone" && (
                         <Space>
                           <Avatar src={botImage} />
                           <Form
@@ -443,9 +439,9 @@ export default function LiveChats() {
                           ></div> */}
                         </Space>
                       )
-                    ) : message["bot"] && message["bot"].type == "video" ? (
+                    ) : message["bot"] && message["bot"].type === "video" ? (
                       message["bot"] &&
-                      message["bot"].type == "video" && (
+                      message["bot"].type === "video" && (
                         <Space>
                           <Avatar src={botImage} />
                           <div
@@ -455,9 +451,9 @@ export default function LiveChats() {
                           ></div>
                         </Space>
                       )
-                    ) : message["bot"] && message["bot"].type == "value" ? (
+                    ) : message["bot"] && message["bot"].type === "value" ? (
                       message["bot"] &&
-                      message["bot"].type == "value" && (
+                      message["bot"].type === "value" && (
                         <Space className="nextResponse">
                           <Avatar src={botImage} />
                           <div className="nextResponseBtn">
@@ -495,7 +491,7 @@ export default function LiveChats() {
               <div className="botmsg">
                 <div className="scheduler">
                   <div>
-                    {nextResponses == "time" && (
+                    {nextResponses === "time" && (
                       <Space>
                         <Avatar src={botImage} />
                         <Form
@@ -558,7 +554,7 @@ export default function LiveChats() {
                     )}
                   </div>
                   <div>
-                    {nextResponses == "date" && (
+                    {nextResponses === "date" && (
                       <Space>
                         <Avatar src={botImage} />
                         <Form
@@ -620,7 +616,7 @@ export default function LiveChats() {
                     )}
                   </div>
                   <div>
-                    {nextResponses == "phone" && (
+                    {nextResponses === "phone" && (
                       <Space>
                         <Avatar src={botImage} />
                         <Form
@@ -678,7 +674,7 @@ export default function LiveChats() {
                     )}
                   </div>
                   <div>
-                    {nextResponses == "email" && (
+                    {nextResponses === "email" && (
                       <Space>
                         <Avatar src={botImage} />
                         <Form

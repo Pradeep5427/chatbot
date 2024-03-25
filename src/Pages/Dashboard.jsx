@@ -1,21 +1,9 @@
 import React, { useState } from "react";
-import {
-  Card,
-  Row,
-  Col,
-  Button,
-  Modal,
-  Form,
-  Input,
-  Dropdown,
-  Space,
-} from "antd";
+import { Card, Row, Col, Button, Modal, Form, Input } from "antd";
 import {
   UsergroupAddOutlined,
-  LogoutOutlined,
   SlidersOutlined,
   DeleteFilled,
-  WechatWorkOutlined,
 } from "@ant-design/icons";
 import { Link, useLocation } from "react-router-dom";
 import UploadImage from "../Assets/Images/uploadimg.jpeg";
@@ -256,9 +244,9 @@ export default function Dashboard() {
                 </Form.Item>
                 <div className="adduserContent">
                   {preview ? (
-                    <img src={preview} className="adduser" />
+                    <img src={preview} className="adduser" alt="adduser" />
                   ) : (
-                    <img src={UploadImage} className="adduser" />
+                    <img src={UploadImage} className="adduser" alt="adduser" />
                   )}
                 </div>
               </div>

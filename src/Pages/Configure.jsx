@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Tabs, Button, Tooltip, Input, Row, Col, Form, TimePicker } from "antd";
+import { Tabs, Button, Tooltip, Input, Row, Col, Form } from "antd";
 import { Link } from "react-router-dom";
 import ConfigureRobo from "../Assets/Images/configure.png";
 import axios from "axios";
@@ -26,7 +26,6 @@ const App = () => {
   const botId = params.get(`id`);
   const botName = params.get(`botName`);
 
-  const [form] = Form.useForm();
   // welcome message function
   const welcomeMessage = async (values) => {
     const formData = new FormData();
@@ -35,7 +34,7 @@ const App = () => {
       `http://127.0.0.1:5000/welcomemsg/${botId}`,
       formData
     );
-    let data = response.data;
+    // let data = response.data;
   };
   // config message function
   const configMessage = async (values) => {
@@ -49,7 +48,7 @@ const App = () => {
       formData
     );
 
-    let data = response.data;
+    // let data = response.data;
   };
   // upload message function
   const fileUpload = (e) => {
@@ -94,7 +93,7 @@ const App = () => {
       `http://127.0.0.1:5000/save_question/${botId}`,
       formData
     );
-    let data = response.data;
+    // let data = response.data;
   };
   // email message function
   const email = async (values) => {
@@ -104,7 +103,7 @@ const App = () => {
       `http://127.0.0.1:5000/save_question_email/${botId}`,
       formData
     );
-    let data = response.data;
+    // let data = response.data;
   };
 
   // date message function
@@ -115,7 +114,7 @@ const App = () => {
       `http://127.0.0.1:5000/set_date/${botId}`,
       formData
     );
-    let data = response.data;
+    // let data = response.data;
   };
 
   // phone message function
@@ -126,7 +125,7 @@ const App = () => {
       `http://127.0.0.1:5000/save_question_phone/${botId}`,
       formData
     );
-    let data = response.data;
+    // let data = response.data;
   };
 
   // OpenAi message function
@@ -145,13 +144,13 @@ const App = () => {
       formData
     );
 
-    let data = response.data;
+    // let data = response.data;
   };
 
   // submit failed  function
 
   const onFinishFailed = (errorInfo) => {
-    console.log("Failed:", errorInfo);
+    console.log("Failed:", errorInfo, setTabPosition);
   };
 
   const tabData = [

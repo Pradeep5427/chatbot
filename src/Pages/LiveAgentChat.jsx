@@ -42,6 +42,7 @@ export default function LiveAgentChats() {
     if (socket && values) {
       socket.emit("live_agent_message", values.agentmessage);
     }
+    console.log(response);
     form.resetFields();
   };
 
