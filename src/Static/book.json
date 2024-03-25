@@ -1,0 +1,25 @@
+{
+  "books": [
+    {
+      "title": "1984",
+      "author": "George Orwell",
+      "publication_year": 1949,
+      "genres": ["Dystopian", "Political fiction"],
+      "publisher": "Secker & Warburg"
+    },
+    {
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "publication_year": 1960,
+      "genres": ["Southern Gothic", "Bildungsroman"],
+      "publisher": "J. B. Lippincott & Co."
+    },
+    {
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "publication_year": 1925,
+      "genres": ["Tragedy", "Modernist"],
+      "publisher": "Charles Scribner's Sons"
+    }
+  ]
+}

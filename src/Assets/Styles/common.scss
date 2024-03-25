@@ -1,0 +1,615 @@
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: gray;
+  border-radius: 10px;
+}
+
+.Btn {
+  background-image: linear-gradient(45deg, black, transparent);
+  border-radius: 30px;
+  border: none;
+}
+.adduser {
+  width: 90px;
+  height: 90px;
+}
+// Login page
+.login {
+  background-image: linear-gradient(37deg, rgb(32, 218, 233), rgb(40, 21, 236));
+  padding: 20px;
+  height: 100vh;
+  background-size: cover;
+  h1 {
+    color: white;
+  }
+  .loginImage {
+    img {
+      width: 100%;
+      height: 100%;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+    }
+  }
+  .loginForm {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    border-radius: 20px;
+    .userInput {
+      padding: 10px 10px 10px 20px;
+      font-size: 17px;
+    }
+    ::placeholder {
+      color: gray;
+    }
+    .ant-form-item
+      .ant-form-item-label
+      > label.ant-form-item-required:not(
+        .ant-form-item-required-mark-optional
+      )::before {
+      font-size: 18px;
+      color: red;
+    }
+    .ant-form-item-label label {
+      font-size: 17px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .loginBtn {
+      width: 100%;
+      background-image: linear-gradient(45deg, black, transparent);
+      font-size: 17px;
+      height: 42px;
+      margin: 15px 0;
+      border-radius: 30px;
+    }
+    .account {
+      font-size: 17px;
+      text-align: center;
+    }
+  }
+}
+
+// signup page
+.signup {
+  background: url("../Images/signup.jpg");
+  padding: 20px;
+  height: 100vh;
+  background-size: cover;
+  h1 {
+    color: black;
+  }
+  .signupForm {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 25px;
+    border-radius: 20px;
+    .userInput {
+      padding: 10px 10px 10px 20px;
+      font-size: 17px;
+    }
+    ::placeholder {
+      color: gray;
+    }
+    .ant-form-item
+      .ant-form-item-label
+      > label.ant-form-item-required:not(
+        .ant-form-item-required-mark-optional
+      )::before {
+      font-size: 18px;
+      color: red;
+    }
+    label {
+      font-size: 17px;
+      font-weight: bold;
+      color: black;
+    }
+
+    .signinBtn {
+      width: 100%;
+      background-image: linear-gradient(45deg, black, transparent);
+      font-size: 17px;
+      height: 42px;
+      margin: 15px 0;
+      border-radius: 30px;
+    }
+    .account {
+      font-size: 17px;
+      text-align: center;
+    }
+  }
+}
+
+//Create Bot Modal
+
+.createBot {
+  width: 400px !important;
+  .ant-modal-title {
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+  .createBotContent {
+    label {
+      font-size: 17px;
+      font-weight: bold;
+      color: black;
+    }
+    .ant-input-outlined {
+      padding: 10px;
+    }
+    .createRoboUpload {
+      position: relative;
+      .upload {
+        .ant-form-item-control-input-content {
+          display: flex;
+          justify-content: center;
+        }
+        .imageUpload {
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          opacity: 0;
+          z-index: 1;
+        }
+      }
+      .adduserContent {
+        position: absolute;
+        top: 40px;
+        height: 100px;
+        width: 100px;
+        border: 1px solid grey;
+        left: 50%;
+        top: 65%;
+        border-radius: 50%;
+        background: white;
+        transform: translate(-50%, -50%);
+        z-index: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .adduser {
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  .botCreate {
+    width: 100%;
+    background-image: linear-gradient(45deg, black, transparent);
+    font-size: 17px;
+    height: 42px;
+    margin: 15px 0;
+    border-radius: 30px;
+  }
+}
+
+//Dashboard Page
+.dashboard {
+  .dashboardLeft {
+    background-image: linear-gradient(45deg, #a1c4fd, #c2e9fb);
+    height: 100vh;
+    padding-top: 20px;
+    border-radius: 15px;
+    .dashboardImg {
+      margin-top: 50px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .dashboardContainer {
+    padding: 30px;
+    background: #b4c2ca;
+    border-radius: 15px;
+  }
+  .dashboardRight {
+    padding: 0 20px 20px 20px;
+    .chatbotDetailsheader {
+      margin-bottom: 10px;
+      background: white;
+      border-radius: 15px;
+      padding: 0 30px;
+    }
+    .chatbotHeader {
+      color: dodgerblue;
+    }
+
+    .chatbotDetails {
+      align-items: baseline;
+      padding: 20px 30px 100px 30px;
+      padding-top: 20px;
+      background: white;
+      border-radius: 15px;
+    }
+    .botsCard {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      .ant-card-body {
+        padding: 15px;
+      }
+      .botimg {
+        width: 100%;
+        height: 150px;
+        object-fit: contain;
+      }
+    }
+    .dashboardBtn {
+      margin-left: 10px;
+    }
+    .contentBtns {
+      display: flex;
+      margin-top: 10px;
+      justify-content: space-between;
+    }
+  }
+}
+
+// AgentLogin
+
+.createagentsignup {
+  background-image: linear-gradient(to left, transparent, lightgreen);
+  padding: 20px;
+  height: 100vh;
+}
+//agentLoginForm
+
+.agentLogin {
+  .loginForm {
+    padding: 20px;
+  }
+}
+
+//LiveChats
+
+.livechats {
+  padding: 20px;
+  background-color: lightblue;
+  height: 100vh;
+  .chatbotHeader {
+    background-color: #3d434c;
+    color: white;
+    padding: 10px;
+    h3,
+    p {
+      margin: 5px;
+    }
+  }
+  .chatbot {
+    background-color: white;
+    height: 80vh;
+    padding: 10px;
+    position: relative;
+    .back {
+      position: absolute;
+      left: 20px;
+      top: 30px;
+      height: 30px;
+      background: dodgerblue;
+      width: 30px;
+      border-radius: 50%;
+      .anticon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        height: 100%;
+      }
+    }
+    .MsgContainer {
+      height: 60vh;
+      overflow: auto;
+    }
+    .botmsg {
+      padding: 0 10px;
+      .botChat {
+        text-align: left;
+      }
+      .nextResponse {
+        width: 100%;
+        margin: 10px 0;
+        .ant-select-selector {
+          padding: 5px;
+        }
+        .ant-select-multiple {
+          width: 100%;
+        }
+        .ant-space-item:not(:first-child) {
+          flex-grow: 1;
+          .ant-btn {
+            width: 100%;
+          }
+        }
+      }
+      .valueresponse {
+        background: lightblue;
+        padding: 5px 25px;
+        border-radius: 10px;
+      }
+
+      .scheduler {
+        .ant-form-item {
+          margin-bottom: 10px;
+        }
+        .ant-btn {
+          padding: 0px 15px;
+          height: 35px;
+        }
+        .ant-input {
+          margin: 0;
+        }
+        .ant-form-item-label {
+          padding: 0;
+        }
+        .dataForms {
+          width: 100%;
+        }
+      }
+      input {
+        padding: 5px;
+        border-radius: 5px;
+        width: 100%;
+      }
+      button {
+        // padding: 10px;
+        border-radius: 10px;
+        border: 1px solid lightgray;
+      }
+      .userChat {
+        text-align: right;
+        padding-right: 10px;
+      }
+      .bot-R,
+      .bot-L {
+        background: lightblue;
+        padding: 10px;
+        border-radius: 10px;
+        display: inline-block;
+      }
+    }
+    .userMessage {
+      background: lightblue;
+      padding: 10px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+    .fromUser {
+      text-align: right;
+      // .userBotMessage {
+      //   text-align: right;
+      // }
+    }
+    .chatbotFooter {
+      bottom: 10px;
+      width: 100%;
+      .ant-form-item-label {
+        padding: 0;
+        margin-top: 10px;
+      }
+      .chatResult {
+        height: 120px;
+        overflow: auto;
+        border: 1px solid lightgray;
+        border-radius: 10px;
+        padding: 10px;
+
+        .ant-btn + .ant-btn {
+          margin: 10px 15px;
+        }
+        .user-message {
+          text-align: left !important;
+          background: linear-gradient(
+            90.9deg,
+            rgb(3, 195, 195) 0.3%,
+            rgb(37, 84, 112) 87.8%
+          ) !important;
+        }
+
+        .user-message,
+        .agent-message {
+          background: linear-gradient(
+            112.9deg,
+            rgb(112, 255, 151) 6.2%,
+            rgb(70, 195, 255) 99.7%
+          );
+          border-radius: 10px;
+          padding: 10px;
+          text-align: right;
+          color: white;
+          font-weight: bold;
+          margin: 5px 0;
+        }
+      }
+      .messagetext {
+        padding: 8px;
+        font-size: 16px;
+        margin-bottom: 5px;
+
+        ::placeholder {
+          color: gray;
+        }
+      }
+      .botFooter {
+        .footerContent {
+          font-size: 15px;
+          color: gray;
+        }
+      }
+    }
+  }
+}
+
+//LiveAgents
+
+.liveAgent {
+  text-align: center;
+  h1 {
+    color: dodgerblue;
+  }
+  .liveAgentImage {
+    width: 100%;
+    filter: drop-shadow(2px 2px 4px #000000);
+  }
+  .chatbot {
+    border-radius: 20px;
+    height: calc(100vh - 40px);
+    padding-bottom: 10px;
+  }
+  .responseBtn {
+    border-radius: 30px;
+    width: 45%;
+    margin: 5px;
+    height: 35px;
+  }
+}
+
+// Configure
+
+.configure {
+  .tabImage {
+    .configureRobo {
+      width: 100%;
+      height: 250px;
+      filter: drop-shadow(2px 2px 4px #000000);
+    }
+  }
+  .anticon {
+    font-size: 20px;
+  }
+  .tabSideImage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+    .mainconfigureRobo {
+      filter: drop-shadow(2px 2px 4px #000000);
+    }
+    p {
+      font-size: 17px;
+    }
+  }
+  .configureContents {
+    p {
+      font-size: 18px;
+      margin: 5px 0;
+      line-height: 35px;
+    }
+    ::placeholder {
+      color: gray;
+    }
+    .configureBtn {
+      margin: 10px 0;
+      padding: 0 40px;
+      height: 40px;
+    }
+
+    .welcomeMessageForm {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      .configInput {
+        padding: 10px;
+      }
+    }
+  }
+
+  .ant-tabs-nav {
+    width: 25%;
+    height: 100vh;
+    .ant-tabs-nav-list {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 10px;
+      flex: 0;
+
+      .ant-tabs-tab:not(:first-child) {
+        width: 30%;
+        background-color: lavender;
+        height: 50px;
+        border-radius: 10px;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+  .ant-tabs-tab-active {
+    p {
+      color: gray;
+    }
+  }
+  .configureBtn {
+    margin: 0 5px;
+  }
+  .ant-tabs-ink-bar {
+    background-color: transparent;
+  }
+}
+//Landing page
+.landingPage {
+  height: 100vh;
+  width: 100%;
+  color: white;
+  background-image: linear-gradient(37deg, rgb(32, 218, 233), rgb(40, 21, 236));
+  .landingHeader {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .landingLogo {
+      width: 90px;
+    }
+    .landingBtn {
+      border-radius: 30px;
+      margin: 0 10px;
+      padding: 0 25px;
+      height: 40px;
+      font-size: clamp(0.9rem, 1.5vw, 1rem);
+      :hover {
+        background-color: none;
+      }
+    }
+  }
+
+  .landingContent {
+    h1 {
+      font-size: 65px;
+      line-height: 80px;
+    }
+    .landingImage {
+      width: 100%;
+    }
+    .btnLayer {
+      padding: 5px;
+      border-radius: 40px;
+      border: 1px solid #fbfbfb;
+      display: inline-block;
+      .landingContentBtn {
+        border-radius: 30px;
+        height: 50px;
+        font-size: 20px;
+        padding: 0 70px;
+      }
+    }
+  }
+}
