@@ -148,7 +148,7 @@ export default function LiveChats() {
   return (
     <div className="livechats">
       <Row justify="center" align="middle">
-        <Col xl={6} md={8}>
+        <Col xs={24} sm={15} md={12} lg={8} xl={6}>
           <Row className="chatbotHeader" align="middle">
             <Col span={3}>
               <Avatar src={botImage} />
@@ -466,13 +466,225 @@ export default function LiveChats() {
                                 </Button>
                               </Dropdown>
                             )}
-                          </div>
+                            <div
+                              className="botmsg"
+                              style={{ marginTop: "10px" }}
+                            >
+                              <div className="scheduler">
+                                <div>
+                                  {nextResponses === "time" && (
+                                    <Form
+                                      className="scheduler"
+                                      name="basicTime"
+                                      labelCol={{
+                                        span: 24,
+                                      }}
+                                      wrapperCol={{
+                                        span: 24,
+                                      }}
+                                      style={{
+                                        maxWidth: 600,
+                                      }}
+                                      initialValues={{
+                                        remember: true,
+                                      }}
+                                      onFinish={getTime}
+                                      onFinishFailed={onFinishFailed}
+                                      autoComplete="off"
+                                    >
+                                      <Form.Item
+                                        label="Pick a time"
+                                        name="time"
+                                        rules={[
+                                          {
+                                            required: true,
+                                            message: "Please Enter Time!",
+                                          },
+                                        ]}
+                                      >
+                                        <TimePicker
+                                          picker="time"
+                                          className="dataForms"
+                                          value={time}
+                                          onChange={onChange}
+                                        />
+                                      </Form.Item>
 
-                          {/* <div
-                            dangerouslySetInnerHTML={{
-                              __html: message["bot"].value,
-                            }}
-                          ></div> */}
+                                      <Form.Item
+                                        wrapperCol={{
+                                          span: 16,
+                                        }}
+                                      >
+                                        <Button
+                                          type="primary"
+                                          htmlType="submit"
+                                          className="timeSchedulerBtn"
+                                        >
+                                          Save Response
+                                        </Button>
+                                      </Form.Item>
+                                    </Form>
+                                  )}
+                                </div>
+                                <div>
+                                  {nextResponses === "date" && (
+                                    <Form
+                                      className="scheduler"
+                                      name="basicTime"
+                                      labelCol={{
+                                        span: 24,
+                                      }}
+                                      wrapperCol={{
+                                        span: 24,
+                                      }}
+                                      style={{
+                                        maxWidth: 600,
+                                      }}
+                                      initialValues={{
+                                        remember: true,
+                                      }}
+                                      onFinish={getDate}
+                                      onFinishFailed={onFinishFailed}
+                                      autoComplete="off"
+                                    >
+                                      <Form.Item
+                                        label="Pick a Date"
+                                        name="date"
+                                        rules={[
+                                          {
+                                            required: true,
+                                            message: "Please Enter Date!",
+                                          },
+                                        ]}
+                                      >
+                                        <DatePicker
+                                          format="YYYY-MM-DD"
+                                          onChange={dateChange}
+                                          className="dataForms"
+                                        />
+                                      </Form.Item>
+
+                                      <Form.Item
+                                        wrapperCol={{
+                                          span: 16,
+                                        }}
+                                      >
+                                        <Button
+                                          type="primary"
+                                          htmlType="submit"
+                                          className="timeSchedulerBtn"
+                                        >
+                                          Save Response
+                                        </Button>
+                                      </Form.Item>
+                                    </Form>
+                                  )}
+                                </div>
+                                <div>
+                                  {nextResponses === "phone" && (
+                                    <Form
+                                      className="scheduler"
+                                      name="basicTime"
+                                      labelCol={{
+                                        span: 24,
+                                      }}
+                                      wrapperCol={{
+                                        span: 24,
+                                      }}
+                                      style={{
+                                        maxWidth: 600,
+                                      }}
+                                      initialValues={{
+                                        remember: true,
+                                      }}
+                                      onFinish={getPhone}
+                                      onFinishFailed={onFinishFailed}
+                                      autoComplete="off"
+                                    >
+                                      <Form.Item
+                                        label="Phone Number"
+                                        name="phone"
+                                        rules={[
+                                          {
+                                            required: true,
+                                            message:
+                                              "Please Enter  Phone Number!",
+                                          },
+                                        ]}
+                                      >
+                                        <Input className="dataForms" />
+                                      </Form.Item>
+
+                                      <Form.Item
+                                        wrapperCol={{
+                                          span: 16,
+                                        }}
+                                      >
+                                        <Button
+                                          type="primary"
+                                          htmlType="submit"
+                                          className="timeSchedulerBtn"
+                                        >
+                                          Save
+                                        </Button>
+                                      </Form.Item>
+                                    </Form>
+                                  )}
+                                </div>
+                                <div>
+                                  {nextResponses === "email" && (
+                                    <Form
+                                      className="scheduler"
+                                      name="basicTime"
+                                      labelCol={{
+                                        span: 24,
+                                      }}
+                                      wrapperCol={{
+                                        span: 24,
+                                      }}
+                                      style={{
+                                        maxWidth: 600,
+                                      }}
+                                      initialValues={{
+                                        remember: true,
+                                      }}
+                                      onFinish={getEmail}
+                                      onFinishFailed={onFinishFailed}
+                                      autoComplete="off"
+                                    >
+                                      <Form.Item
+                                        label="Email Address"
+                                        name="mail"
+                                        rules={[
+                                          {
+                                            required: true,
+                                            message:
+                                              "Please Enter  Phone Number!",
+                                          },
+                                        ]}
+                                      >
+                                        <Input className="dataForms" />
+                                      </Form.Item>
+
+                                      <Form.Item
+                                        wrapperCol={{
+                                          span: 16,
+                                        }}
+                                      >
+                                        <Button
+                                          type="primary"
+                                          htmlType="submit"
+                                          className="timeSchedulerBtn"
+                                        >
+                                          Save
+                                        </Button>
+                                      </Form.Item>
+                                    </Form>
+                                  )}
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </Space>
                       )
                     ) : null}
@@ -487,251 +699,6 @@ export default function LiveChats() {
                   </div>
                 </div>
               ))}
-              <div className="botmsg">
-                <div className="scheduler">
-                  <div>
-                    {nextResponses === "time" && (
-                      <Space>
-                        <Avatar src={botImage} />
-                        <Form
-                          className="scheduler"
-                          name="basicTime"
-                          labelCol={{
-                            span: 24,
-                          }}
-                          wrapperCol={{
-                            span: 24,
-                          }}
-                          style={{
-                            maxWidth: 600,
-                          }}
-                          initialValues={{
-                            remember: true,
-                          }}
-                          onFinish={getTime}
-                          onFinishFailed={onFinishFailed}
-                          autoComplete="off"
-                        >
-                          <Form.Item
-                            label="Pick a time"
-                            name="time"
-                            rules={[
-                              {
-                                required: true,
-                                message: "Please Enter Time!",
-                              },
-                            ]}
-                          >
-                            <TimePicker
-                              picker="time"
-                              className="dataForms"
-                              value={time}
-                              onChange={onChange}
-                            />
-                          </Form.Item>
-
-                          <Form.Item
-                            wrapperCol={{
-                              span: 16,
-                            }}
-                          >
-                            <Button
-                              type="primary"
-                              htmlType="submit"
-                              className="timeSchedulerBtn"
-                            >
-                              Save Response
-                            </Button>
-                          </Form.Item>
-                        </Form>
-                        {/* <div
-                            dangerouslySetInnerHTML={{
-                              __html: message["bot"].value,
-                            }}
-                          ></div> */}
-                      </Space>
-                    )}
-                  </div>
-                  <div>
-                    {nextResponses === "date" && (
-                      <Space>
-                        <Avatar src={botImage} />
-                        <Form
-                          className="scheduler"
-                          name="basicTime"
-                          labelCol={{
-                            span: 24,
-                          }}
-                          wrapperCol={{
-                            span: 24,
-                          }}
-                          style={{
-                            maxWidth: 600,
-                          }}
-                          initialValues={{
-                            remember: true,
-                          }}
-                          onFinish={getDate}
-                          onFinishFailed={onFinishFailed}
-                          autoComplete="off"
-                        >
-                          <Form.Item
-                            label="Pick a Date"
-                            name="date"
-                            rules={[
-                              {
-                                required: true,
-                                message: "Please Enter Date!",
-                              },
-                            ]}
-                          >
-                            <DatePicker
-                              format="YYYY-MM-DD"
-                              onChange={dateChange}
-                              className="dataForms"
-                            />
-                          </Form.Item>
-
-                          <Form.Item
-                            wrapperCol={{
-                              span: 16,
-                            }}
-                          >
-                            <Button
-                              type="primary"
-                              htmlType="submit"
-                              className="timeSchedulerBtn"
-                            >
-                              Save Response
-                            </Button>
-                          </Form.Item>
-                        </Form>
-                        {/* <div
-                            dangerouslySetInnerHTML={{
-                              __html: message["bot"].value,
-                            }}
-                          ></div> */}
-                      </Space>
-                    )}
-                  </div>
-                  <div>
-                    {nextResponses === "phone" && (
-                      <Space>
-                        <Avatar src={botImage} />
-                        <Form
-                          className="scheduler"
-                          name="basicTime"
-                          labelCol={{
-                            span: 24,
-                          }}
-                          wrapperCol={{
-                            span: 24,
-                          }}
-                          style={{
-                            maxWidth: 600,
-                          }}
-                          initialValues={{
-                            remember: true,
-                          }}
-                          onFinish={getPhone}
-                          onFinishFailed={onFinishFailed}
-                          autoComplete="off"
-                        >
-                          <Form.Item
-                            label="Phone Number"
-                            name="phone"
-                            rules={[
-                              {
-                                required: true,
-                                message: "Please Enter  Phone Number!",
-                              },
-                            ]}
-                          >
-                            <Input className="dataForms" />
-                          </Form.Item>
-
-                          <Form.Item
-                            wrapperCol={{
-                              span: 16,
-                            }}
-                          >
-                            <Button
-                              type="primary"
-                              htmlType="submit"
-                              className="timeSchedulerBtn"
-                            >
-                              Save
-                            </Button>
-                          </Form.Item>
-                        </Form>
-                        {/* <div
-                          dangerouslySetInnerHTML={{
-                            __html: message["bot"].value,
-                          }}
-                        ></div> */}
-                      </Space>
-                    )}
-                  </div>
-                  <div>
-                    {nextResponses === "email" && (
-                      <Space>
-                        <Avatar src={botImage} />
-                        <Form
-                          className="scheduler"
-                          name="basicTime"
-                          labelCol={{
-                            span: 24,
-                          }}
-                          wrapperCol={{
-                            span: 24,
-                          }}
-                          style={{
-                            maxWidth: 600,
-                          }}
-                          initialValues={{
-                            remember: true,
-                          }}
-                          onFinish={getEmail}
-                          onFinishFailed={onFinishFailed}
-                          autoComplete="off"
-                        >
-                          <Form.Item
-                            label="Email Address"
-                            name="mail"
-                            rules={[
-                              {
-                                required: true,
-                                message: "Please Enter  Phone Number!",
-                              },
-                            ]}
-                          >
-                            <Input className="dataForms" />
-                          </Form.Item>
-
-                          <Form.Item
-                            wrapperCol={{
-                              span: 16,
-                            }}
-                          >
-                            <Button
-                              type="primary"
-                              htmlType="submit"
-                              className="timeSchedulerBtn"
-                            >
-                              Save
-                            </Button>
-                          </Form.Item>
-                        </Form>
-                        {/* <div
-                          dangerouslySetInnerHTML={{
-                            __html: message["bot"].value,
-                          }}
-                        ></div> */}
-                      </Space>
-                    )}
-                  </div>
-                </div>
-              </div>
             </div>
 
             <div className="chatbotFooter">

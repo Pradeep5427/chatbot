@@ -3,6 +3,8 @@ import { Tabs, Button, Tooltip, Input, Row, Col, Form } from "antd";
 import { Link } from "react-router-dom";
 import ConfigureRobo from "../Assets/Images/configure.png";
 import axios from "axios";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import {
   RobotOutlined,
   CloudUploadOutlined,
@@ -33,6 +35,7 @@ const App = () => {
       `http://127.0.0.1:5000/welcomemsg/${botId}`,
       formData
     );
+    toast.success("Created Successfully");
     console.log(response);
 
     // let data = response.data;
@@ -48,6 +51,8 @@ const App = () => {
       `http://127.0.0.1:5000/add_response/${botId}`,
       formData
     );
+    toast.success("Created Successfully");
+
     console.log(response);
 
     // let data = response.data;
@@ -66,6 +71,8 @@ const App = () => {
       `http://127.0.0.1:5000/upload_image_old/${botId}`,
       formData
     );
+    toast.success("Uploaded Successfully");
+
     let data = response.data;
 
     console.log("uploadConfig", data);
@@ -74,13 +81,14 @@ const App = () => {
   // video message function
   const video = async (values) => {
     const formData = new FormData();
-    console.log("values", values);
     formData.append("key", values.uploadVideo);
     formData.append("value1", values.videolink);
     const response = await axios.post(
       `http://127.0.0.1:5000/add_link/${botId}`,
       formData
     );
+    toast.success("Video Uploaded  Successfully");
+
     let data = response.data;
 
     console.log("video Data", data);
@@ -95,6 +103,8 @@ const App = () => {
       `http://127.0.0.1:5000/save_question/${botId}`,
       formData
     );
+    toast.success("Time Response Added");
+
     console.log(response);
 
     // let data = response.data;
@@ -107,6 +117,8 @@ const App = () => {
       `http://127.0.0.1:5000/save_question_email/${botId}`,
       formData
     );
+    toast.success("Email Response Added");
+
     console.log(response);
 
     // let data = response.data;
@@ -120,6 +132,8 @@ const App = () => {
       `http://127.0.0.1:5000/set_date/${botId}`,
       formData
     );
+    toast.success("Date Response Added");
+
     console.log(response);
 
     // let data = response.data;
@@ -133,6 +147,8 @@ const App = () => {
       `http://127.0.0.1:5000/save_question_phone/${botId}`,
       formData
     );
+    toast.success("Phone Response Added");
+
     console.log(response);
 
     // let data = response.data;
@@ -153,6 +169,8 @@ const App = () => {
       `http://127.0.0.1:5000/save_ai/${botId}`,
       formData
     );
+    toast.success("AI File Added");
+
     console.log(response);
 
     // let data = response.data;
