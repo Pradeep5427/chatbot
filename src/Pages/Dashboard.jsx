@@ -88,6 +88,8 @@ export default function Dashboard() {
     dispatch(deleteChatBot({ id }));
   };
 
+  console.log(setSize, setcardData);
+
   return (
     <div className="dashboard">
       <Row className="dashboardContainer">

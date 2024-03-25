@@ -113,7 +113,7 @@ export default function LiveChats() {
     axios.get(`${baseUrl}welcomemsg/${botId}`).then((res) => {
       setConfigureMsg(res);
     });
-  }, [message]);
+  }, []);
 
   const handleResetForm = () => {
     form.resetFields();

@@ -34,6 +34,8 @@ const App = () => {
       `http://127.0.0.1:5000/welcomemsg/${botId}`,
       formData
     );
+    console.log(response);
+
     // let data = response.data;
   };
   // config message function
@@ -47,6 +49,7 @@ const App = () => {
       `http://127.0.0.1:5000/add_response/${botId}`,
       formData
     );
+    console.log(response);
 
     // let data = response.data;
   };
@@ -93,6 +96,8 @@ const App = () => {
       `http://127.0.0.1:5000/save_question/${botId}`,
       formData
     );
+    console.log(response);
+
     // let data = response.data;
   };
   // email message function
@@ -103,6 +108,8 @@ const App = () => {
       `http://127.0.0.1:5000/save_question_email/${botId}`,
       formData
     );
+    console.log(response);
+
     // let data = response.data;
   };
 
@@ -114,6 +121,8 @@ const App = () => {
       `http://127.0.0.1:5000/set_date/${botId}`,
       formData
     );
+    console.log(response);
+
     // let data = response.data;
   };
 
@@ -125,6 +134,8 @@ const App = () => {
       `http://127.0.0.1:5000/save_question_phone/${botId}`,
       formData
     );
+    console.log(response);
+
     // let data = response.data;
   };
 
@@ -143,6 +154,7 @@ const App = () => {
       `http://127.0.0.1:5000/save_ai/${botId}`,
       formData
     );
+    console.log(response);
 
     // let data = response.data;
   };
