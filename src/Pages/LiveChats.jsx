@@ -25,7 +25,7 @@ export default function LiveChats() {
   const [date, setDate] = useState("");
   const [nextResponses, setNextResponses] = useState();
 
-  const baseUrl = "http://127.0.0.1:5000/";
+  const baseUrl = "http://13.127.154.146:81/";
 
   const botImage = params.get("imageUrl");
   const botId = params.get("id");

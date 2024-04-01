@@ -14,15 +14,14 @@ export default function Login() {
 
   const unSuccess = () => toast.error("Invalid Email or Password");
 
+  const baseUrl = "http://13.127.154.146:81/";
+
   const onFinish = async (values) => {
     try {
       var formData = new FormData();
       formData.append("email", values.email);
       formData.append("password", values.password);
-      const response = await axios.post(
-        "http://127.0.0.1:5000/agentlogin",
-        formData
-      );
+      const response = await axios.post(`${baseUrl}agentlogin`, formData);
       let datas = response.data.datas;
       console.log("datas", datas);
       if (response.status === 200) {

@@ -25,6 +25,8 @@ export default function Dashboard() {
 
   const dispatch = useDispatch();
 
+  const baseUrl = "http://13.127.154.146:81/";
+
   const [cardData, setcardData] = useState(botData);
   const success = () => toast.success("Created Successfully");
   const unSuccess = () => toast.error("Something went wrong");
@@ -58,10 +60,7 @@ export default function Dashboard() {
       formData.append("botDescription", values.botDescription);
       formData.append("wizard-picture", file);
       formData.append("userId", user.id);
-      const response = await axios.post(
-        "http://127.0.0.1:5000/create_bot",
-        formData
-      );
+      const response = await axios.post(`${baseUrl}create_bot`, formData);
       if (response.status === 200) {
         success();
         setPreview("");

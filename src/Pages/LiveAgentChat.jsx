@@ -11,7 +11,7 @@ export default function LiveAgentChats() {
   const [receivedMessage, setReceivedMessage] = useState([]);
   const [form] = Form.useForm();
 
-  const baseUrl = "http://127.0.0.1:5000/";
+  const baseUrl = "http://13.127.154.146:81/";
 
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);

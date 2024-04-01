@@ -27,12 +27,14 @@ const App = () => {
   const botId = params.get(`id`);
   const botName = params.get(`botName`);
 
+  const baseUrl = "http://13.127.154.146:81/";
+
   // welcome message function
   const welcomeMessage = async (values) => {
     const formData = new FormData();
     formData.append("welcomemsg", values.welcomeMessage);
     const response = await axios.post(
-      `http://127.0.0.1:5000/welcomemsg/${botId}`,
+      `${baseUrl}welcomemsg/${botId}`,
       formData
     );
     toast.success("Created Successfully");
@@ -48,7 +50,7 @@ const App = () => {
     formData.append("value1", values.configoption_1);
     formData.append("value2", values.configoption_2);
     const response = await axios.post(
-      `http://127.0.0.1:5000/add_response/${botId}`,
+      `${baseUrl}add_response/${botId}`,
       formData
     );
     toast.success("Created Successfully");
@@ -68,7 +70,7 @@ const App = () => {
     formData.append("image", uploadImage);
     formData.append("key1", values.configUpload);
     const response = await axios.post(
-      `http://127.0.0.1:5000/upload_image_old/${botId}`,
+      `${baseUrl}upload_image_old/${botId}`,
       formData
     );
     toast.success("Uploaded Successfully");
@@ -83,10 +85,7 @@ const App = () => {
     const formData = new FormData();
     formData.append("key", values.uploadVideo);
     formData.append("value1", values.videolink);
-    const response = await axios.post(
-      `http://127.0.0.1:5000/add_link/${botId}`,
-      formData
-    );
+    const response = await axios.post(`${baseUrl}add_link/${botId}`, formData);
     toast.success("Video Uploaded  Successfully");
 
     let data = response.data;
@@ -100,7 +99,7 @@ const App = () => {
     const formData = new FormData();
     formData.append("question_text", values.timerMessage);
     const response = await axios.post(
-      `http://127.0.0.1:5000/save_question/${botId}`,
+      `${baseUrl}save_question/${botId}`,
       formData
     );
     toast.success("Time Response Added");
@@ -114,7 +113,7 @@ const App = () => {
     const formData = new FormData();
     formData.append("question_text", values.configmail);
     const response = await axios.post(
-      `http://127.0.0.1:5000/save_question_email/${botId}`,
+      `${baseUrl}save_question_email/${botId}`,
       formData
     );
     toast.success("Email Response Added");
@@ -128,10 +127,7 @@ const App = () => {
   const date = async (values) => {
     const formData = new FormData();
     formData.append("questions", values.configdate);
-    const response = await axios.post(
-      `http://127.0.0.1:5000/set_date/${botId}`,
-      formData
-    );
+    const response = await axios.post(`${baseUrl}set_date/${botId}`, formData);
     toast.success("Date Response Added");
 
     console.log(response);
@@ -144,7 +140,7 @@ const App = () => {
     const formData = new FormData();
     formData.append("question_phone", values.configPhone);
     const response = await axios.post(
-      `http://127.0.0.1:5000/save_question_phone/${botId}`,
+      `${baseUrl}save_question_phone/${botId}`,
       formData
     );
     toast.success("Phone Response Added");
@@ -165,10 +161,7 @@ const App = () => {
     debugger;
     const formData = new FormData();
     formData.append("aiFile", aiFile);
-    const response = await axios.post(
-      `http://127.0.0.1:5000/save_ai/${botId}`,
-      formData
-    );
+    const response = await axios.post(`${baseUrl}save_ai/${botId}`, formData);
     toast.success("AI File Added");
 
     console.log(response);

@@ -13,6 +13,8 @@ export default function SignUp() {
 
   const unSuccess = () => toast.error("Invalid Credentials");
 
+  const baseUrl = "http://13.127.154.146:81/";
+
   const onFinish = async (values) => {
     try {
       console.log(values, "values....");
@@ -21,10 +23,7 @@ export default function SignUp() {
       formdata.append("password", values.password);
       formdata.append("confirmPassword", values.confirm_password);
 
-      const response = await axios.post(
-        "http://127.0.0.1:5000/agentsignup",
-        formdata
-      );
+      const response = await axios.post(`${baseUrl}agentsignup`, formdata);
       if (response.status === 200) {
         success();
         navigate("/agentlogin");
